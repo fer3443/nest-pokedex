@@ -12,21 +12,19 @@ import { JoiValidationSchema } from './config/joi.validation';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      load:[EnvConfigutarion],
-      validationSchema: JoiValidationSchema
+      load: [EnvConfigutarion],
+      validationSchema: JoiValidationSchema,
     }),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'public'),
     }),
 
     MongooseModule.forRoot(process.env.MONGODB as string, {
-      dbName:'pokemondb'
+      dbName: 'pokemondb',
     }),
     PokemonModule,
     CommonModule,
-    SeedModule
+    SeedModule,
   ],
 })
-export class AppModule {
-
-}
+export class AppModule {}
