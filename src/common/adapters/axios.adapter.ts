@@ -10,7 +10,7 @@ export class AxiosAdapter implements HttpAdapter {
       const { data } = await this.axios.get<T>(url);
       return data;
     } catch (error) {
-      console.log(error)
+      console.log(error);
       throw new Error('This is an error -  Check logs');
     }
   }
