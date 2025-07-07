@@ -27,4 +27,8 @@ import { JoiValidationSchema } from './config/joi.validation';
     SeedModule,
   ],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(){
+    console.log(process.env.MONGODB)
+  }
+}
